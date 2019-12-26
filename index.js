@@ -26,5 +26,14 @@ app.post('/', (req, res) => {
   res.send(`agregado: ${dato}`);
 })
 
+app.get('/', (req, res) => {
+  pool.query(`select * from datos`, (err, res2) => {
+    res.send(res2);
+    if (err) {
+      res.send("error: " + err)
+    }
+  });
+})
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => { console.log(`Escuchando en puerto ${PORT} ...`) })
