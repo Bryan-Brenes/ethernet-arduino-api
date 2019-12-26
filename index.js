@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
 
 app.get('/', (req, res) => {
   pool.query(`select * from datos`, (err, res2) => {
-    res.send(res2);
+    res.send(res2.rows);
     if (err) {
       res.send("error: " + err)
     }
