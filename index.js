@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const { Pool, Client } = require('pg')
-const connectionString = 'postgres://pdypewzcmiidot:ddf779b97e2cb698f922969424bc258f4d1649784be568a569a8c2be90ee7a9c@ec2-107-22-216-123.compute-1.amazonaws.com:5432/dmqe2uft63ru6?ssl=true'
+const connectionString = 'postgres://bzijorxrsqakbv:b7a96af5c04282ee942f759ca862a1bbdaf05e528fa392eff300e039c98d6358@ec2-107-22-234-204.compute-1.amazonaws.com:5432/d4o7frdi5ou1qk?ssl=true'
 const pool = new Pool({
   connectionString: connectionString
 })
