@@ -20,5 +20,11 @@ app.get('/:dato', (req, res) => {
   res.send('agregado');
 })
 
+app.post('/', (req, res) => {
+  var { dato } = req.body;
+  pool.query(`insert into datos(dato) values('${dato}')`);
+  res.send(`agregado: ${dato}`);
+})
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => { console.log(`Escuchando en puerto ${PORT} ...`) })
