@@ -21,9 +21,14 @@ app.get('/:dato', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  var { dato } = req.body;
-  pool.query(`insert into datos(dato) values('${dato}')`);
-  res.send(`agregado: ${dato}`);
+  if (!req.body.dato) {
+    res.send("dato no enviado");
+  } else {
+    var dato = req.body.dato;
+    pool.query(`insert into datos(dato) values('${dato}')`);
+    res.send(`agregado: ${dato}`);
+  }
+
 })
 
 app.get('/', (req, res) => {
