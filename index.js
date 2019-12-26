@@ -20,7 +20,7 @@ app.get('/:dato', (req, res) => {
   res.send('agregado');
 })
 
-app.post('/', (req, res) => {
+app.post('/dato', (req, res) => {
   if (!req.body.dato) {
     res.send("dato no enviado");
   } else {
